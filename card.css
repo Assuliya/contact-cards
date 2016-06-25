@@ -29,7 +29,11 @@
 	display: inline-block;
 }
 	#right div{
-		width: 300px;
+		width: 200px;
 		height: 200px;
 		background-color: darkred;
+		margin-bottom: 10px;
+		text-align: center;
+		font-size: 20px;
+		
 	}
