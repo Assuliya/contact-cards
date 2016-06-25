@@ -10,14 +10,26 @@
   	<script type="text/javascript">
   		$(document).ready(function(){
   			$("form").submit(function(){
-					$("#right").children().append(
+					$("#right").append(
 										"<div>" +
-											$("#first_name").val() + 
-											$("#last_name").val() + $("#email").val() + $("#contact").val() +
+											$("#first_name").val() + "" +
+											$("#last_name").val() + "" +
+											$("#description").val() +
 										"</div>")
 					$(".input").val("");
 					return false;
 			});
+
+			var description = $("#description").val();
+
+			$(document).ready(function(){
+				   $('button').click(function(){
+				    $('div').append('<h3>I am a new content</h3>');
+				   });
+				   $('div.a').on('mouseover', 'h3', function(){ 
+				    $(this).css('color', 'pink');
+				   });
+  			});
 
   		});
   	</script>
@@ -26,10 +38,10 @@
 	<div id="wrapper">
 		<div id="left">
 			<form>
-				<label>First Name <input class="input" type="text" name="first_name"></label>
-				<label>Last Name <input class="input" type="text" name="last_name"></label>
-				<label>Description <input class="input" type="text" name="last_name" value="Enter description"></label>
-				<label><input class="input" type="submit" placeholder="Add User"></label>
+				<label>First Name <input class="input" id="first_name" type="text" name="first_name"></label>
+				<label>Last Name <input class="input" id="last_name" type="text" name="last_name"></label>
+				<label>Description <input class="input" id="description" type="text" name="last_name" value="Enter description"></label>
+				<label><input class="input" id="submit" type="submit" placeholder="Add User"></label>
 			</form>
 
 		</div>
