@@ -9,24 +9,25 @@
   	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
   	<script type="text/javascript">
   		$(document).ready(function(){
-  			var click = "Click for description!"
+  			var click = "Click for description!";
   			$("form").submit(function(){
 					$("#right").append(
-										"<div>" +
-											$("#first_name").val() + "<br>" +
-											$("#last_name").val() + "<br>" +
-											click +
+										"<div>" + "<h1>" +
+											$("#first_name").val() + "</h1>" + "<br>" + "<h1>" +
+											$("#last_name").val() + "</h1>" + "<br>" + "<p>" +
+											click + "<p>" +
 										"</div>")
 					$(".input").val("");
 					return false;
 			});
 
-			var description = $("#description").val();
+			var description = $("#description").val(); //have to sort the storing previous var problem;
 
 			$("p").click(function(){
 				$(this).text(description);
 			});
-			$(document).on("click", click, function(){ 
+			$(document).on("click", "p", function(){ 
+				    alert("you clicked");
 				    $(this).text(description);
 				   });
 
@@ -49,6 +50,7 @@
 		<div id="right">
 			<div>
 				<h1>Name</h1>
+				<h1>Last Name</h1>
 				<p id="click">Click for description!</p>
 				
 			</div>
