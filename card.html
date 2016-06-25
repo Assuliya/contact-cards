@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Contact Cards</title>
+	<link rel="stylesheet" type="text/css" href="card.css">
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+  	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+  	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+  	<script type="text/javascript">
+  		$(document).ready(function(){
+  			$("form").submit(function(){
+					$("#right").children().append(
+										"<div>" +
+											$("#first_name").val() + 
+											$("#last_name").val() + $("#email").val() + $("#contact").val() +
+										"</div>")
+					$(".input").val("");
+					return false;
+			});
+
+  		});
+  	</script>
+</head>
+<body>
+	<div id="wrapper">
+		<div id="left">
+			<form>
+				<label>First Name <input class="input" type="text" name="first_name"></label>
+				<label>Last Name <input class="input" type="text" name="last_name"></label>
+				<label>Description <input class="input" type="text" name="last_name" value="Enter description"></label>
+				<label><input class="input" type="submit" placeholder="Add User"></label>
+			</form>
+
+		</div>
+		<div id="right">
+			<div class="contact_box">
+				<h1></h1>
+				<p>Click for description!</p>
+				
+			</div>
+			
+		</div>
+		
+	</div>
+
+</body>
+</html>
